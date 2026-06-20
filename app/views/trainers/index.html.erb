@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Trainers</h1>
+  <div class="cards">
+    <% @trainers.each do |trainer| %>
+      <div class="card-trainer">
+        <%= link_to trainer_path(trainer) do %>
+          <h2><%= trainer.name %></h2>
+          <p><%= trainer.age %></p>
+          <%= cl_image_tag  trainer.photo.key, height: 250 %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Pokedex</h1>
+
+  <div class="cards">
+    <% @pokemons.each do |pokemon| %>
+    <div class="card">
+      <h2><%= link_to pokemon.name, pokemon_path(pokemon) %></h2>
+      <p><%= pokemon.element_type %></p>
+      <%= cl_image_tag pokemon.photo.key, width: 100 %>
+    </div>
+    <% end %>
+  </div>
+</div>

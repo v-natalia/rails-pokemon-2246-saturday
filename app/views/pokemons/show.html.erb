@@ -1,0 +1,17 @@
+<div class="container d-flex">
+  <div>
+    <%= link_to "Back to Pokedex", root_path  %>
+    <h2><%= @pokemon.name %></h2>
+    <p><%= @pokemon.element_type %></p>
+    <%= cl_image_tag @pokemon.photo.key, width: 150 %>
+  </div>
+  <div>
+    <%= simple_form_for [@pokemon, @pokeball] do |f| %>
+      <%= f.association :trainer %>
+      <%= f.input :location %>
+      <%= f.input :caught_on, as: :date, html5: true %>
+      <%= f.submit 'Catch !' %>
+    <% end %>
+
+  </div>
+</div>
